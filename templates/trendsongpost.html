@@ -1,0 +1,20 @@
+{% extends 'index.html' %} {% block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6" style="padding-top: 3%;">
+            <img src="/media/{{trend.image}}" alt="" style="height: 25rem !important;">
+        </div>
+        <div class="col-md-6">
+            <h2 style="padding-top: 9%; font-weight: 550; "> Title : {{trend.name}}</h2>
+            <h2> Artist : {{song.artist}}</h2>
+            <h2> Tag : {{song.tags}}</h2>
+            <hr> <audio controls>
+            <source src="/media/{{trend.songs}}" type="audio/mp3">
+            </audio>
+        </div>
+    </div>
+    <div class="container" style="margin-top: 10%;">
+        <a href="./allsongs.html">
+            <button class="btn btn-outline-danger">Back</button> </a>
+    </div>
+</div>{% endblock content%}

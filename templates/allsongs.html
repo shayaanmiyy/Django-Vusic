@@ -1,0 +1,35 @@
+{% extends 'index.html'%}{% block content%}
+<div class="container-xxl">
+    <form method="get" action="/search" class="d-flex " style="padding: 4%; ">
+        <input class="form-control me-2 " type="search " placeholder="Search " aria-label="Search " name="search" id="search">
+        <button class="btn btn-outline-success " type="submit ">Search</button>
+    </form>
+    <div class="row ">
+        {% for i in song%}
+        <div class="col ">
+            <div class="card mb-4 " style="width: fit-content; padding: 1rem; padding-left: 3%; height : 30rem; ">
+                <div class="row no-gutters ">
+                    <div class="col-md-4 ">
+                        <img src="/media/{{i.thumbnail}} " class="card-img " style="height: 18rem !important; width: 21rem; ">
+                    </div>
+                    <div class=" col-md-9 " style="height : auto; padding: 0%; ">
+                        <div class="card-body " style="padding-left: 6%; ">
+                            <h5 class="card-title " style="color: purple; ">
+                                <a href="{{i.song_id}} ">
+                                    <h5 class="card-title " style="color: purple; padding-left: 3%; ">
+                                        <b>Song Name : {{i.name}}</b></h5>
+                                </a>
+                                <div>
+                                    <p class="card-text " style=" padding-left: 3%; "> Artist : {{i.artist}}</p>
+                                </div>
+                                <div style="padding-top: 1rem; "><a href="{{i.song_id}} "><button class="btn btn-outline-success ">Listen Songs</button></a></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<a href="http://192.168.43.179:8000/ " style="padding: 2rem; "><button class=" btn btn-outline-danger ">Home</button></a>{% endblock %}

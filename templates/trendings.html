@@ -1,0 +1,28 @@
+{% extends 'index.html'%}{% block content%}
+<div class="container-xxl">
+    {% for i in song%}
+    <div class="card mb-4" style="max-width: 940px; padding-top: 2%; padding-left: 3%; height : 18rem;">
+        <div class="row no-gutters">
+            <div class="col-md-4">
+                <img src="/media/{{i.thumbnail}}" class="card-img" style="height: 15rem !important; width:18rem;">
+            </div>
+            <div class=" col-md-8" style="height : auto; padding: 0%;">
+                <div class="card-body" style="padding-left: 6%;">
+                    <h5 class="card-title" style="color: purple;">
+                        <a href="{{i.song_id}}">
+                            <h5 class="card-title" style="color: purple;">
+                                <b>{{i.name}}</b></h5>
+                        </a>
+                        <p class="card-text ">{{i.artist}}</p>
+                        <div class="container-xxl">
+                            <a href="{{i.song_id}}"><button class="btn btn-outline-success ">Listen Songs</button></a>
+                            <hr>
+                            <a href=" "><button class="btn btn-outline-success ">Like Songs</button></a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <a href="/templates/trendings.html"><button class="btn btn-outline-success ">Trends</button></a>
+    </div>
+    {% endfor %}
+</div>{% endblock %}
